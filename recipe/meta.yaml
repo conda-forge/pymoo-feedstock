@@ -11,13 +11,18 @@ source:
   sha256: 2fbca1716f6b45e430197ce4ce2210070fd3b6b9ec6b17bb25d98486115272c2
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
   host:
     - cython
     - numpy
