@@ -309,6 +309,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@cyrilpic](https://github.com/cyrilpic/)
 * [@d-cunningham](https://github.com/d-cunningham/)
 * [@mxr-conda](https://github.com/mxr-conda/)
 
