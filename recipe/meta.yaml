@@ -1,5 +1,5 @@
 {% set name = "pymoo" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.1.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pymoo-{{ version }}.tar.gz
-  sha256: 368a22a762a2ae3d62f5a745fee23789320169c327f8d0bf265b9036e560d20e
+  sha256: 65637ea2a49fb836b638fd5d63a5da4f3bfa713fe8b283e0c22c5e9af3b024db
 
 build:
   number: 0
