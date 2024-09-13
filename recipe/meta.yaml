@@ -34,7 +34,7 @@ requirements:
     - setuptools
   run:
     - autograd >=1.4
-    - cma ==3.2.2
+    - cma >=3.2.2
     - matplotlib-base >=3
     - numpy >=1.15
     - python
