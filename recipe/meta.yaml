@@ -1,5 +1,5 @@
 {% set name = "pymoo" %}
-{% set version = "0.6.1.5" %}
+{% set version = "0.6.1.6" %}
 
 
 package:
@@ -8,10 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymoo-{{ version }}.tar.gz
-  sha256: 9ce71eaceb2f5cccf8c5af53102cf6d96fa911452addaf48fb971a60621f8364
+  sha256: d48077c7b612b149e7db5351459bf96a0950e84ebcd5b7b953bf46b3dcf1ac28
+  patches:
+    - 0001-Add-missing-files.patch
 
 build:
-  number: 1
+  number: 0
 
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . -vv
@@ -38,8 +40,8 @@ requirements:
     - matplotlib-base >=3
     - numpy >=1.15
     - python
+    - python-moocore >=0.1.7
     - scipy >=1.1
-    - dill
     - alive-progress
     - Deprecated
 
@@ -49,7 +51,7 @@ test:
     - pymoo.algorithms
   commands:
     - pip check
-    - python -c "from pymoo.util.function_loader import is_compiled; exit(is_compiled()!=True)"
+    - python -c "from pymoo.functions import is_compiled; exit(is_compiled()!=True)"
   requires:
     - pip
 
