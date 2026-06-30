@@ -50,7 +50,7 @@ test:
     - pymoo.algorithms
   commands:
     - pip check
-    - python -c "from pymoo.util.function_loader import is_compiled; exit(is_compiled()!=True)"
+    - python -c "from pymoo.functions import is_compiled; exit(is_compiled()!=True)"
   requires:
     - pip
 
