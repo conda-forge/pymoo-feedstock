@@ -1,5 +1,5 @@
 {% set name = "pymoo" %}
-{% set version = "0.6.1.5" %}
+{% set version = "0.6.2" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymoo-{{ version }}.tar.gz
-  sha256: 9ce71eaceb2f5cccf8c5af53102cf6d96fa911452addaf48fb971a60621f8364
+  sha256: 6f497c00d7cf7598d176a5cd244b4cc66661811a6e81a715a83e2cd545fefe7d
 
 build:
-  number: 1
+  number: 0
 
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . -vv
@@ -34,10 +34,11 @@ requirements:
     - setuptools
   run:
     - autograd >=1.4
-    - cma ==3.2.2
+    - cma >=3.4.0
     - matplotlib-base >=3
-    - numpy >=1.15
+    - numpy >=1.19.3
     - python
+    - python-moocore >=0.1.7
     - scipy >=1.1
     - dill
     - alive-progress
@@ -49,7 +50,7 @@ test:
     - pymoo.algorithms
   commands:
     - pip check
-    - python -c "from pymoo.util.function_loader import is_compiled; exit(is_compiled()!=True)"
+    - python -c "from pymoo.functions import is_compiled; exit(is_compiled()!=True)"
   requires:
     - pip
 
