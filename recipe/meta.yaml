@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pymoo-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pymoo-{{ version }}.tar.gz
   sha256: 6f497c00d7cf7598d176a5cd244b4cc66661811a6e81a715a83e2cd545fefe7d
 
 build:
-  number: 0
+  number: 1
 
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . -vv
